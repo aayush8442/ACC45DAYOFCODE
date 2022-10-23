@@ -1,0 +1,111 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+bool isPerfectSquare(long double x)
+{
+    if (x >= 0) {  long long sr = sqrt(x);  return (sr * sr == x); }
+    return false;
+}
+
+float squareRoot(int number, int precision=4)
+{
+    int start = 0, end = number;
+    int mid;
+ 
+    // variable to store the answer
+    float ans;
+ 
+    // for computing integral part
+    // of square root of number
+    while (start <= end) {
+        mid = (start + end) / 2;
+        if (mid * mid == number) {
+            ans = mid;
+            break;
+        }
+ 
+        // incrementing start if integral
+        // part lies on right side of the mid
+        if (mid * mid < number) {
+            start = mid + 1;
+            ans = mid;
+        }
+ 
+        // decrementing end if integral part
+        // lies on the left side of the mid
+        else {
+            end = mid - 1;
+        }
+    }
+ 
+    // For computing the fractional part
+    // of square root upto given precision
+    float increment = 0.1;
+    for (int i = 0; i < precision; i++) {
+        while (ans * ans <= number) {
+            ans += increment;
+        }
+ 
+        // loop terminates when ans * ans > number
+        ans = ans - increment;
+        increment = increment / 10;
+    }
+    return ans;
+}
+int main()
+{
+static int d=0,e=0,f=0;    
+int a,b,c;
+float k,temp=0;
+float l=0;
+
+cout<<"enter a : ";
+cin>>a;    
+    
+    for(int i=(a+1);i<i+1;i++)
+    {
+        if(isPerfectSquare(i)){  cout<<i<<endl;  b=i;  break;}
+    }
+    
+    
+    for(int j=(a-1);j>j-1;j--)
+    {
+        if(isPerfectSquare(j)){  cout<<j<<endl;  c=j;  break;}
+    }
+    
+    for(int i=a;i<b;i++) {d++;}
+    for(int i=a;i>c;i--) {e++;}
+    
+    cout<<d<<endl;  cout<<e<<endl;
+ 
+    
+    if(d>e) 
+    {k=squareRoot(c);}
+    else 
+    {k=squareRoot(b);}
+    
+    cout<<k<<endl;
+    cout<<squareRoot(a)<<endl;
+    
+    for(int i=0;i<100;i++)
+    {
+        if(l!=k)
+        {
+            l=((k*k)+a)/(2*k);
+            cout<<"l"<<l<<endl;
+            temp=l;
+            l=0;
+            k=temp;
+            cout<<"k"<<k<<endl;
+            f++;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    cout<<f<<endl;
+  return 0;
+}

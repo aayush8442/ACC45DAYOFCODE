@@ -1,0 +1,45 @@
+#include<iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    bool i , j , k , l;
+   
+    cout<<"choose any one but dont tell \n"<<"Dog \nCat \nRabbit \nPeacock"<<endl;
+    cout<<"\n";
+    cout<<"Now check whether its in the given list or not \n"<<endl;
+    
+    cout<<"List 1 \n \n"<<"Dog \nRabbit \nTiger \nLion \n"<<endl;
+    cout<<"If Yes enter 1 and if No enter 0 "<<endl;
+    cin>>i;      cout<<"\n";
+    
+    cout<<"List 2 \n \n"<<"Cat \nHen \nlion \ndonkey \n"<<endl;
+    cout<<"If Yes enter 1 and if No enter 0 "<<endl;
+    cin>>j;      cout<<"\n";
+    
+    cout<<"List 3 \n \n"<<"Cheetah \nCat \nRabbit \nPeacock \n"<<endl;
+    cout<<"If Yes enter 1 and if No enter 0 "<<endl;
+    cin>>k;      cout<<"\n";
+    
+    cout<<"List 4 \n \n"<<"Dog \nmonkey \nrhino \nPeacock \n"<<endl;
+    cout<<"If Yes enter 1 and if No enter 0 "<<endl;
+    cin>>l;     
+    
+    string str1 = to_string(i);
+    string str2 = to_string(j);
+    string str3 = to_string(k);
+    string str4 = to_string(l);
+    string a = "1";
+    
+    string v;
+    v =  a + str1 + str2 + str3 + str4;
+    int f = stoi(v);
+  
+    cout<<"\n";
+    cout<<"your choosen animal is ";
+    if (f==11001) {cout<<"dog";}
+    else if (f==10110) {cout<<"cat";}
+    else if (f==11010) {cout<<"rabbit";}
+    else {cout<<"peacock";}
+}

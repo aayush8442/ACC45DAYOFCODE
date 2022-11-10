@@ -1,1 +1,19 @@
-
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a , b , c=0;
+    cout<<"enter numerator"<<endl;
+    cin>>a;
+    cout<<"enter denominator"<<endl;
+    cin>>b;
+    
+    while(a>b)
+    {
+        a+=(-b);
+        c++;
+    }
+    
+    cout<<"remainder : "<<a<<endl;
+    cout<<"quotient : "<<c<<endl;
+}

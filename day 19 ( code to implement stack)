@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+int
+main ()
+{
+  int stack[100], n = 100, option, item, temp, i, top = -1, s;
+  while (top <= (n - 1))
+    {
+      cout <<
+	"Enter the switch condition \n1 for push \n2 for pop \n3 for display \n4 for exit"
+	<< endl;
+      cin >> s;
+
+      switch (s)
+	{
+	case 1:
+	  if (top == (n - 1))
+	    {
+	      cout << "stack is full" << endl;
+	    }
+	  else
+	    {
+	      top++;
+	      cout << "enter the item"<<endl;
+	      cin >> item;
+	      cout<<"item enetred "<<endl;
+	      stack[top] = item;
+	    }
+	  break;
+
+	case 2:
+	  if (top == -1)
+	    {
+	      cout << "stack is underflow";
+	    }
+	  else
+	    {
+	      temp = stack[top];
+	      top--;
+	      cout << temp << " item deleted" <<endl;
+	    }
+	  break;
+
+	case 3:
+	  for (i = top; i >= 0; i--)
+	    {
+	      cout <<"i = "<< i<< "place" << stack[i] << endl;
+	    }
+	  break;
+
+	case 4:
+	  {
+	    exit (0);
+	  }
+	  break;
+	default:
+	  cout << "you have enetered wrong option" << endl;
+	}
+    }
+}
